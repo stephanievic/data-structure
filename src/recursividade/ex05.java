@@ -34,6 +34,5 @@ public class ex05 {
         else {
             return vetor [tamanho - 1] + soma(vetor, tamanho-1);
         }
-        
     }
 }
