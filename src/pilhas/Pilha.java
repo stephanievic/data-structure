@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 public class Pilha {
     public static int topo = -1;
+    public static int tamanho;
 
     public static void main(String[] args) {
-        int op, valor, tamanho;
+        int op, valor;
 
         Scanner sc = new Scanner (System.in);
 
@@ -61,12 +62,21 @@ public class Pilha {
     }
 
     public static void empilhar (int[] vetor, int valor){
-        topo++;
-        vetor[topo] = valor;
+        if (!cheia(tamanho)){
+            vetor[topo++] = valor;
+        }
+        else {
+            System.out.println("A pilha já está cheia.");
+        }
     }
 
     public static void desempilhar() {
-        topo--;
+        if (!vazia()){
+            topo --;
+        }
+        else {
+            System.out.println("A pilha já está vazia.");
+        }
     }
 
     public static int tamanho() {
@@ -81,13 +91,13 @@ public class Pilha {
         if (topo == (tamanho - 1)){ //se topo = tamanho - 1, então está cheia (na ultima posição do vetor)
             return true;
         }
-        else return false;
+        return false;
     }
 
     public static boolean vazia (){
         if (topo == -1){ 
             return true;
         }
-        else return false;
+        return false;
     }
 }
