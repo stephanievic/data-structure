@@ -6,6 +6,7 @@ public class Pilha {
     public static int topo = -1;
     public static int tamanho;
 
+    //implementação
     public static void main(String[] args) {
         int op, valor;
 
@@ -61,6 +62,7 @@ public class Pilha {
         sc.close();
     }
 
+    //métodos da pilha
     public static void empilhar (int[] vetor, int valor){
         if (!cheia(tamanho)){
             vetor[topo++] = valor;
